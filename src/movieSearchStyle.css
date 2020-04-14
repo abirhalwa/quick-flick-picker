@@ -1,0 +1,240 @@
+/* Movie Search and movie details styles */
+
+.movieSearchArea {
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movieSearchContainer {
+    width: 100%;
+}
+
+.movieSearchArea h1 {
+    color: var(--mainColor);
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: var(--headingFonts);
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.movieSearchForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.movieSearchBar {
+    width: 100%;
+    font-size: 2rem;
+    height: 4rem;
+    margin-bottom: 5rem;
+    background: #e2ecea;
+    padding: 2rem;
+    border: none;
+}
+
+.movieSearchButton {
+    align-self: center;
+    cursor: pointer;
+}
+
+.movieSearchButton:active {
+    background: var(--accentColor)
+}
+
+/* Media Queries for MOVIE SEARCH */
+
+@media (max-width: 970px) {
+    .movieSearchArea h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 840px) {
+    .movieSearchArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 478px) {
+    .movieSearchArea h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 385px) {
+    .movieSearchArea h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --MOVIE POSTERS */
+
+/* MOVIE POSTERS */
+
+.moviePosterContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    margin: 20rem 0 0;
+    justify-content: center;
+}
+
+.moviePoster {
+    width: 180px;
+    height: 40vh;
+    margin: 1rem 0 0 1rem;
+    position: relative;
+}
+
+/* -------------------------------------MOVIE DETAILS */
+
+.movieDetails {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.detailsPage {
+    display: flex;
+}
+
+.movieDetailContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.addButton {
+    align-self: flex-end;
+    margin-bottom: 4vh;
+    margin-right: 3%;
+}
+
+.movieDetailContainer .addToLists {
+    position: static;
+}
+
+.posterContainer {
+    display: flex;
+    width: 500px;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+}
+
+.movieInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 3px 3px 20px;
+    position: relative;
+}
+
+.movieInfo h1 {
+    margin: 20px 0;
+    font-family: var(--headingFonts);
+    color: var(--mainColor);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.movieInfo h2 {
+    margin-bottom: 5px;
+    font-family: var(--headingFonts);
+    color: var(--mainColor);
+}
+
+.threeDetails {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.genres, .director, .cast {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.genres p, .director p, .cast p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.description p {
+    margin-top: 5px;
+}
+
+.listMenu {
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+.watchVideo, .goBack {
+    text-align: center;
+    background: var(--accentColor);
+    font-family: var(--bodyFont);
+    color: var(--bodyTextColor);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: none;
+}
+
+.trailer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.goBack {
+    display: block;
+    width: 150px;
+    align-self: flex-end;
+    margin: 2vh 0;
+}
+
+@media(max-width:1130px) {
+    .detailsPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .movieInfo {
+        width: 100%;
+        display: flex;
+        padding: 3px;
+    }
+}
+
+@media(max-width:840px) {
+    .movieDetails {
+        width: 100%;
+        text-align: center;
+    }
+    .threeDetails h2, .genres p, .director p, .cast p {
+        text-align: center;
+    }
+}

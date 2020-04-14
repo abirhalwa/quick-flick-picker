@@ -1,0 +1,229 @@
+/* LIST STYLING STARTS HERE */
+
+.yourLists {
+    background-color: var(--mainColor);
+    min-width: 300px;
+    width: 25%;
+    height: 100vh;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.yourLists h2 {
+    padding: 7rem 0 2.5rem;
+    color: var(--backgroundColor);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-family: var(--headingFonts);
+    font-weight: 600;
+}
+
+.listInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.listInputContainer {
+    width: 80%;
+}
+
+.submitButtonContainer {
+    width: 20%;
+    text-align: right;
+}
+
+.listInput input {
+    border: none;
+    background-color: #8fa19c;
+    color: #fff;
+    padding-left: 1rem;
+    font-size: 1.75rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.roundButton {
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    color: var(--backgroundColor);
+    background-color: var(--accentColor);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.roundButton:hover {
+    background-color: var(--hoverColor);
+}
+
+.roundButton:active {
+    color: var(--accentColor);
+}
+
+.movieListContainer {
+    width: 100%;
+}
+
+.movieList {
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.dropDownContainer {
+    width: 100%;
+    display: flex;
+}
+
+.dropDownButton {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accentColor);
+    padding: 0 10px;
+    margin-right: 25px;
+}
+
+h3 {
+    font-family: var(--bodyFont);
+    font-weight: 100;
+    font-size: 2rem;
+    font-size: 1.75rem;
+    margin: 10px 0;
+}
+
+.fa-chevron-down, .closeMovies {
+    color: var(--backgroundColor);
+    font-size: 1.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fa-chevron-down:hover, .closeMovies:hover {
+    color: var(--hoverColor);
+}
+
+/* Movies displayed list */
+
+.movies {
+    position: relative;
+    display: none;
+    text-align: left;
+    width: 80%;
+}
+
+.showMovies {
+    margin: 0;
+    font-size: 1.6rem;
+    transition: 0.5s;
+}
+
+.moviesDisplayed {
+    margin-bottom: 30px;
+    background: #fff;
+    padding: 0 10px;
+}
+
+.moviesDisplayed li {
+    display: flex;
+    font-size: 2rem;
+    background: white;
+    font-size: 1.75rem;
+}
+
+.linkContainer {
+    text-align: center;
+}
+
+.watchMovieBtn {
+    text-align: center;
+    background: var(--accentColor);
+    font-family: var(--bodyFont);
+    color: var(--bodyTextColor);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    border: none;
+}
+
+.watchMovieBtn:hover {
+    background-color: var(--hoverColor);
+}
+
+.watchMovieBtn:active {
+    background-color: var(--backgroundColor);
+}
+
+.listItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listItem:not(:last-child) {
+    border-bottom: 1px solid black;
+}
+
+.noMoviesText {
+    padding: 10px 0;
+}
+
+.listItem p, .listItem a {
+    font-family: var(--bodyFont);
+    margin: 15px 0;
+    font-weight: 100;
+}
+
+.deleteButton {
+    font-size: 1.3rem;
+    color: var(--mainColor);
+    background: none;
+    border: none;
+    padding: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.deleteButton:hover, .deleteListButton:hover {
+    color: var(--hoverColor);
+}
+
+.deleteButton:active, .deleteListButton:active {
+    color: var(--accentColor);
+}
+
+.deleteListButton {
+    font-size: 2rem;
+    color: var(--backgroundColor);
+    background: none;
+    border: none;
+    padding: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.closeMovies {
+    color: #fff;
+    margin: 0;
+}
+
+.changeClose {
+    display: none;
+}
+
+.activeMovieList {
+    display: block;
+}
+
+.yourLists .wrapper {
+    position: relative;
+}
+
