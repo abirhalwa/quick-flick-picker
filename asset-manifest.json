@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quick-flick-picker/static/css/main.0032a13d.chunk.css",
-    "main.js": "/quick-flick-picker/static/js/main.d47b29d4.chunk.js",
-    "main.js.map": "/quick-flick-picker/static/js/main.d47b29d4.chunk.js.map",
+    "main.js": "/quick-flick-picker/static/js/main.fe1674d8.chunk.js",
+    "main.js.map": "/quick-flick-picker/static/js/main.fe1674d8.chunk.js.map",
     "runtime-main.js": "/quick-flick-picker/static/js/runtime-main.b512758b.js",
     "runtime-main.js.map": "/quick-flick-picker/static/js/runtime-main.b512758b.js.map",
     "static/js/2.c662cf17.chunk.js": "/quick-flick-picker/static/js/2.c662cf17.chunk.js",
     "static/js/2.c662cf17.chunk.js.map": "/quick-flick-picker/static/js/2.c662cf17.chunk.js.map",
     "index.html": "/quick-flick-picker/index.html",
-    "precache-manifest.d438850c2295cf1e24293f8fbbc0154c.js": "/quick-flick-picker/precache-manifest.d438850c2295cf1e24293f8fbbc0154c.js",
+    "precache-manifest.993a20749a7a448d3d59233228c278bc.js": "/quick-flick-picker/precache-manifest.993a20749a7a448d3d59233228c278bc.js",
     "service-worker.js": "/quick-flick-picker/service-worker.js",
     "static/css/main.0032a13d.chunk.css.map": "/quick-flick-picker/static/css/main.0032a13d.chunk.css.map",
     "static/js/2.c662cf17.chunk.js.LICENSE.txt": "/quick-flick-picker/static/js/2.c662cf17.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.b512758b.js",
     "static/js/2.c662cf17.chunk.js",
     "static/css/main.0032a13d.chunk.css",
-    "static/js/main.d47b29d4.chunk.js"
+    "static/js/main.fe1674d8.chunk.js"
   ]
 }
