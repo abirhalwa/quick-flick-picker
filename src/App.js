@@ -35,7 +35,7 @@ class App extends Component {
             <input type="checkbox" id="toggle" autoComplete="off" />
           <div className="listComponent"><Lists /></div>
           {/* <!-- end of hamburger menu icon --> */}
-              <Route path="/quickFlickPicker25/:keyword?"  component={MovieSearch} />
+          <Route path="/quick-flick-picker/:keyword?"  component={MovieSearch} />
               <Route path="/movies/:keyword?/:listName?/:movieID"  component={MovieDetails} />
               <Route
                 exact
@@ -44,7 +44,7 @@ class App extends Component {
                 history={props.history}  />}
               />
           <div className="logoAndSearch" >
-            <a href="/quickFlickPicker25/" title="Search Movies"><i className="fas fa-search"></i></a>
+            <a href="/quick-flick-picker/" title="Search Movies"><i className="fas fa-search"></i></a>
             <div className="logoImg">
               <img src={logo} alt="" />
             </div>
