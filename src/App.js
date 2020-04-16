@@ -35,7 +35,7 @@ class App extends Component {
             <input type="checkbox" id="toggle" autoComplete="off" />
           <div className="listComponent"><Lists /></div>
           {/* <!-- end of hamburger menu icon --> */}
-          <Route path="/quick-flick-picker/:keyword?"  component={MovieSearch} />
+          <Route path="/:keyword?"  component={MovieSearch} />
               <Route path="/movies/:keyword?/:listName?/:movieID"  component={MovieDetails} />
               <Route
                 exact
