@@ -4,7 +4,9 @@ import Lists from './Lists.js';
 import MovieSearch from './MovieSearch.js';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link,
+  Switch
 } from 'react-router-dom';
 import MovieDetails from './MovieDetails.js';
 import WatchMovie from './WatchMovie.js';
@@ -23,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <div className="App">
           {/* <!-- hamburger menu icon --> */}
             <label htmlFor="toggle" aria-hidden="true" className="toggle" onClick={this.changeIcon}>
@@ -35,16 +37,18 @@ class App extends Component {
             <input type="checkbox" id="toggle" autoComplete="off" />
           <div className="listComponent"><Lists /></div>
           {/* <!-- end of hamburger menu icon --> */}
-          <Route path="/:keyword?"  component={MovieSearch} />
-              <Route path="/movies/:keyword?/:listName?/:movieID"  component={MovieDetails} />
-              <Route
-                exact
-                path="/watch-movie/:listName"
-                render={props => <WatchMovie listName={props.match.params.listName} key={props.match.params.listName}
-                history={props.history}  />}
-              />
+          <Switch>
+            <Route path="/movies/:keyword?/:listName?/:movieID" component={MovieDetails} />
+            <Route
+              exact
+              path="/watch-movie/:listName"
+              render={props => <WatchMovie listName={props.match.params.listName} key={props.match.params.listName}
+              history={props.history}  />}
+            />
+            <Route path="/:keyword?" component={MovieSearch} />
+          </Switch>
           <div className="logoAndSearch" >
-            <a href="/quick-flick-picker/" title="Search Movies"><i className="fas fa-search"></i></a>
+            <Link to="/" title="Search Movies"><i className="fas fa-search"></i></Link>
             <div className="logoImg">
               <img src={logo} alt="" />
             </div>

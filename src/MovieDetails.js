@@ -121,7 +121,7 @@ class MovieDetails extends Component {
                 <div className="wrapper">                   
                     <div className="movieDetailContainer">
                         {this.state.keyword !== '' ?
-                            <Link className="goBack" to={`/quickFlickPicker25/${this.state.keyword}`}>Back to results</Link>
+                            <Link className="goBack" to={`/${this.state.keyword}`}>Back to results</Link>
                             : null}
                         {this.state.listName !== '' ?
                             <Link className="goBack" to={`/watch-movie/${this.state.listName}`}>Watch Another Movie</Link>

@@ -1,20 +1,19 @@
-// firebase.js
-import firebase from 'firebase';
-import 'firebase/database';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/database';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyButImyQ5c1OHK6YFts-UxHPZyODoakwBE",
+  authDomain: "quick-flick-picker-3075d.firebaseapp.com",
+  databaseURL: "https://quick-flick-picker-3075d-default-rtdb.firebaseio.com",
+  projectId: "quick-flick-picker-3075d",
+  storageBucket: "quick-flick-picker-3075d.firebasestorage.app",
+  messagingSenderId: "754356416254",
+  appId: "1:754356416254:web:4333b0be38afe56245bfaf"
+};
 
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyAmkko3XAdO0l3amrDc4VMBv9e0xuCfEbo",
-    authDomain: "quickflickpicker.firebaseapp.com",
-    databaseURL: "https://quickflickpicker.firebaseio.com",
-    projectId: "quickflickpicker",
-    storageBucket: "quickflickpicker.appspot.com",
-    messagingSenderId: "981312277648",
-    appId: "1:981312277648:web:489979be7011747edd9c15"
-  };
-  // Initialize Firebase
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+}
 
 export default firebase;
 

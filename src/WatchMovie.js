@@ -34,9 +34,9 @@ class WatchMovie extends Component {
     //to get all the movies in the list
     componentDidMount() {
         const dbRef = firebase.database().ref(this.props.listName);
-        const stateToBeSet = [];
         dbRef.on('value', (response) => {
-            const dataFromDb = response.val();
+            const dataFromDb = response.val() || {};
+            const stateToBeSet = [];
             for (let key in dataFromDb) {
                 if (dataFromDb[key] === this.props.listName) {
                     continue;
@@ -54,6 +54,12 @@ class WatchMovie extends Component {
                     this.getGenres();
                 });
             }
+        }, (error) => {
+            swal({
+                title: 'Could not load movies from the database',
+                text: error.message,
+                button: 'OK',
+            });
         });
     }
 

@@ -3,6 +3,7 @@ import firebase from './firebase.js';
 import './addToLists.css';
 import GetMovieDetails from './GetMovieDetails.js';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 class AddToLists extends Component {
 
@@ -18,7 +19,7 @@ class AddToLists extends Component {
         // fetch all the lists from the database
         const dbRef = firebase.database().ref();
         dbRef.on('value', (response) => {
-            const dataFromDb = response.val();
+            const dataFromDb = response.val() || {};
             const stateToBeSet = [];
             for (let key in dataFromDb) {
                 const listInfo = {
@@ -29,6 +30,12 @@ class AddToLists extends Component {
             this.setState({
                 userLists: stateToBeSet,
             })
+        }, (error) => {
+            swal({
+                title: 'Could not load lists from the database',
+                text: error.message,
+                button: 'OK',
+            });
         })
     }
     //to prevent the "+" from reloading
@@ -41,7 +48,7 @@ class AddToLists extends Component {
         const stateToBeSet = [];
         const dbRef = firebase.database().ref(listName);
         dbRef.on('value', (response) => {
-            const dataFromDb = response.val();
+            const dataFromDb = response.val() || {};
             for (let key in dataFromDb) {
                 if (dataFromDb[key] === listName) {
                     continue;
@@ -77,11 +84,20 @@ class AddToLists extends Component {
                 runtime: movieInfo.runtime,
                 genre: genres
             }
-            dbRef.push(details);
-            swal({
-                title: 'The movie has been added to the list successfully!',
-                button: 'OK',
-            })
+            dbRef.push(details)
+                .then(() => {
+                    swal({
+                        title: 'The movie has been added to the list successfully!',
+                        button: 'OK',
+                    })
+                })
+                .catch((error) => {
+                    swal({
+                        title: 'Could not add the movie to the list',
+                        text: error.message,
+                        button: 'OK',
+                    })
+                });
         }
     }
 
@@ -97,16 +113,16 @@ class AddToLists extends Component {
         return (
             <div className="addToLists">
                 <div className="listMenu">
-                    <a href="/" onClick={this.handleReload} className="roundButton" >
+                    <Link to="/" onClick={this.handleReload} className="roundButton" >
                         <span aria-hidden="true" >&#43;</span>
-                    </a>
+                    </Link>
                     <ul className="listSubMenu moviesDisplayed">
                         {userLists.map((list, index) => {
                             return (
                                 <li key={index} className="listItem" onClick={(event) => { this.clickHandler(event, list.key) }}>
                                     <GetMovieDetails movieID={this.props.movieId}
                                         movieDetails={this.getMovieDetails} />
-                                    <a href="/" className="listLinks" >{list.key}</a>
+                                    <Link to="/" className="listLinks" >{list.key}</Link>
                                 </li>
                             )
                         })}

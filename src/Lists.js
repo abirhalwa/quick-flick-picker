@@ -18,7 +18,7 @@ class Lists extends Component {
     componentDidMount () {
         //on value change collect data
         this.state.dbRef.on('value', (response) => {
-            const data = response.val();
+            const data = response.val() || {};
             //make empty array
             const stateToSet = [];
             //loop through our data
@@ -34,6 +34,12 @@ class Lists extends Component {
             this.setState({
                 usersList: stateToSet,
             })
+        }, (error) => {
+            swal({
+                title: 'Could not load lists from the database',
+                text: error.message,
+                button: 'OK',
+            });
         })
     }
 
@@ -65,7 +71,13 @@ class Lists extends Component {
             // create new reference point in database
             const newList = firebase.database().ref(this.state.userListName);
             // push the name on submit to create node in firebase
-            newList.push(this.state.userListName);
+            newList.push(this.state.userListName).catch((error) => {
+                swal({
+                    title: 'Could not save your list',
+                    text: error.message,
+                    button: 'OK',
+                });
+            });
         }
 
         // set to empty string 
@@ -88,7 +100,13 @@ class Lists extends Component {
                 swal({
                     title: `Your list was deleted!`,
                 })
-              this.state.dbRef.child(listToDelete).remove();
+              this.state.dbRef.child(listToDelete).remove().catch((error) => {
+                swal({
+                    title: 'Could not delete your list',
+                    text: error.message,
+                    button: 'OK',
+                });
+              });
             }
           });
     }
@@ -130,7 +148,13 @@ class Lists extends Component {
             // make variable to get the reference point in the database
             const reference = firebase.database().ref(listName.key);
             // delete the movie with the specifc key
-            reference.child(refKey).remove();
+            reference.child(refKey).remove().catch((error) => {
+                swal({
+                    title: 'Could not delete the movie',
+                    text: error.message,
+                    button: 'OK',
+                });
+            });
             }
         }); 
     }
